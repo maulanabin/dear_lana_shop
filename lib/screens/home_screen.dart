@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dear_lana_shop/screens/home_gridview.dart';
 import 'package:dear_lana_shop/screens/home_carousel.dart';
-import 'package:dear_lana_shop/screens/horizontal_scrollview.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -18,14 +17,15 @@ class HomeScreen extends StatelessWidget {
             )
           ],
         ),
-        body: Scrollbar(
-          controller: ScrollController(),
+        body: SingleChildScrollView(
           child: SafeArea(
               child: Center(
             child: Container(
               constraints: BoxConstraints(maxWidth: 950),
               color: Colors.white,
               child: ListView(
+                shrinkWrap: true,
+                physics: ScrollPhysics(),
                 children: [
                   SizedBox(
                     height: 15,
@@ -34,15 +34,8 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                     height: 15,
                   ),
-                  TitleText("Produk Terlaris"),
-                  Container(
-                    margin: EdgeInsets.only(left: 12),
-                    child: HorizontalScrollView(),
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  TitleText("Produk Lainnya"),
+
+                  TitleText("Produk Perawatan & Kecantikan"),
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 12),
                     child: HomeGridView(),

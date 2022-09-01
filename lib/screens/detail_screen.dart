@@ -9,8 +9,7 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Scrollbar(
-          controller: ScrollController(),
+      body: SingleChildScrollView(
           child: Center(
             child: SingleChildScrollView(
                 child: Container(
@@ -32,17 +31,19 @@ class DetailScreen extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
-                              product.name,
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            Expanded(
+                              child: Text(
+                                product.name,
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold),
+                              ),
                             ),
                             Row(
                               children: [
                                 Text(
                                   product.price,
                                   style: TextStyle(
-                                      fontSize: 20, color: Colors.pink),
+                                      fontSize: 20, color: Colors.green),
                                 ),
                                 SizedBox(
                                   width: 15,
@@ -57,7 +58,7 @@ class DetailScreen extends StatelessWidget {
                         ),
                         Divider(),
                         Text(
-                          "Deskripsi: ",
+                          "Deskripsi :",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         SizedBox(height: 15),

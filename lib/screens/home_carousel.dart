@@ -12,7 +12,7 @@ class HomeCarousel extends StatelessWidget {
           autoPlay: true,
           autoPlayInterval: Duration(milliseconds: 2500),
           autoPlayAnimationDuration: Duration(milliseconds: 800)),
-      items: CarouselBannerList.map((item) {
+      items: carouselBannerList.map((item) {
         return Builder(
           builder: (BuildContext context) {
             return FractionallySizedBox(

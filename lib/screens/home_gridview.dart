@@ -3,17 +3,17 @@ import 'package:dear_lana_shop/screens/detail_screen.dart';
 import 'package:dear_lana_shop/models/best_selling_product.dart';
 
 class HomeGridView extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Container(
-    margin: EdgeInsets.only(top: 10),
-    child: GridView.count(
-      crossAxisCount: MediaQuery.of(context).size.width > 800 ? 3 : 2,
-      mainAxisSpacing: 8.0,
-      crossAxisSpacing: 8.0,
-      shrinkWrap: true,
-       children: bestSellingProductList.reversed.map((item) {
+      margin: EdgeInsets.only(top: 10),
+      child: GridView.count(
+        crossAxisCount: MediaQuery.of(context).size.width > 800 ? 3 : 2,
+        mainAxisSpacing: 8.0,
+        crossAxisSpacing: 8.0,
+        shrinkWrap: true,
+        physics: const ScrollPhysics(),
+        children: bestSellingProductList.reversed.map((item) {
           return InkWell(
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -44,8 +44,8 @@ class HomeGridView extends StatelessWidget {
                         height: 6.0,
                       ),
                       Text(
-                        "Rp${item.price}",
-                        style: TextStyle(color: Colors.pink),
+                        "${item.price}",
+                        style: TextStyle(color: Colors.green),
                       )
                     ],
                   ),
